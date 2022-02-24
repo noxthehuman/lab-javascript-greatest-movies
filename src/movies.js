@@ -71,8 +71,8 @@ function orderByYear(arr) {
     if (compareYear === 0) {
       return a.name.localCompare(b.name)
     }
-    //console.log(compareYear);
-    return compareYear;
+    //console.log(compareYear.toString);
+    return compareYear.toString();
   })
 
   return sorted;
@@ -86,6 +86,16 @@ function orderAlphabetically(movies) {
   console.log(titleSorted);
 
   titleSorted.sort();
+  if(titleSorted.length > 20)
+  {
+    const topTwenty = [];
+    for (i=0; i < 20; i++)
+    {
+        topTwenty.push(titleSorted[i]);
+    }
+
+    return topTwenty;
+  }
 
   return titleSorted;
 }
