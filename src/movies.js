@@ -63,16 +63,14 @@ function orderByYear(arr) {
     return arr;
   }
 
-  const sorted = [];
-  sorted.push(arr);
-
+  const sorted = [...arr];
+  
   sorted.sort(function(a, b) {
     const compareYear = parseFloat(a.year) - parseFloat(b.year);
     if (compareYear === 0) {
-      return a.name.localCompare(b.name)
+      return a.title.localeCompare(b.title);
     }
-    //console.log(compareYear.toString);
-    return compareYear.toString();
+    return compareYear;
   })
 
   return sorted;
